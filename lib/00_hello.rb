@@ -3,5 +3,5 @@ def hello
 end
 
 def greet(who)
-    "Hello, #{who}!"
-  end
+  "Hello, #{who}!"
+end

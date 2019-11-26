@@ -1,15 +1,13 @@
-def add (f,s)
+def add(f,s)
   add = f + s
 end
 
-def subtract (f,s)
+def subtract(f,s)
   sub = f - s
 end
 
-def sum (arr)
-
+def sum(arr)
   sum = 0
-
-arr.each {|a| sum+=a}
-sum
+  arr.each {|a| sum+=a}
+  sum
 end
