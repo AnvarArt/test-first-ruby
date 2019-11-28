@@ -36,7 +36,4 @@ else
 end
 end
   arr.join(" ")
-<<<<<<< HEAD
 end
-=======
->>>>>>> master
