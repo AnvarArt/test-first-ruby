@@ -11,6 +11,10 @@ else
 arr
 end
 if con = arr[/(?<vowel>[aeiou])(?<non_vowel>[^aeiou])/, "consonant"]
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> master
 end
 end
