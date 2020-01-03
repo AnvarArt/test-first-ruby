@@ -26,14 +26,14 @@ def titleize(c)
   arr[0] = arr[0].capitalize
   arr[-1] = arr[-1].capitalize
   i = 1
-while i < arr.count
+  while i < arr.count
   s = arr[i].to_s
-if s.length <= 4
-  i += 1
-else
-  arr[i] = arr[i].capitalize
-  i += 1
-end
-end
+    if s.length <= 4
+    i += 1
+    else
+    arr[i] = arr[i].capitalize
+    i += 1
+    end
+  end
   arr.join(" ")
 end
