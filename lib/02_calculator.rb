@@ -1,9 +1,9 @@
 def add(f,s)
-  add = f + s
+  f + s
 end
 
 def subtract(f,s)
-  sub = f - s
+  f - s
 end
 
 def sum(arr)
