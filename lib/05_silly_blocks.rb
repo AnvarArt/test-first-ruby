@@ -11,6 +11,6 @@ end
 
 def repeater(value = 1)
   value.times do
-    yield
+   yield
   end
 end
