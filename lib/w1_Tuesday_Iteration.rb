@@ -40,35 +40,27 @@ def factors(num)
   arr
 end
 
-def bubble_sort!(arr1)
-  return arr1 if arr1.size <= 1
-  swap = true
-    while swap
-      swap = false
-      (arr1.length - 1).times do |x|
-        if arr1[x] > arr1[x+1]
-          arr1[x], arr1[x+1] = arr1[x+1], arr1[x]
-          swap = true
+class Array
+
+  def bubble_sort!(arr1)
+    return arr1 if arr1.size <= 1
+    swap = true
+      while swap
+        swap = false
+        (arr1.length - 1).times do |x|
+          if arr1[x] > arr1[x+1]
+            arr1[x], arr1[x+1] = arr1[x+1], arr1[x]
+            swap = true
+          end
         end
       end
-    end
 
-  arr1
-end
+    arr1
+  end
 
-def bubble_sort(arr1)
-  rr2 = arr1.dup
-  return arr2 if arr2.size <= 1
-  swap = true
-    while swap
-      swap = false
-      (arr2.length - 1).times do |x|
-        if arr2[x] > arr2[x+1]
-          arr2[x], arr2[x+1] = arr2[x+1], arr1[x]
-          swap = true
-        end
-      end
-    end
-
-  arr2
+  def bubble_sort(&block)
+		arr2 = arr1.dup
+		arr2.bubble_sort!(&block)
+		return arr2
+	end
 end
