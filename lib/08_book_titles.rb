@@ -1,22 +1,12 @@
 class Book
-  attr_reader :title
+  attr_accessor :title
 
-  def title=(sentence)
-    line = sentence.split(' ')
-    line.first[0] = line.first[0].upcase
-      line.each do |word|
-        if word == 'and' || word == 'the' ||
-           word == 'over' || word == 'a' ||
-           word == 'an' || word == 'but' ||
-           word == 'or' || word == 'for' ||
-           word == 'nor' || word == 'on' ||
-           word == 'at' || word == 'to' ||
-           word == 'from' || word == 'by' ||
-           word == 'in' || word == 'of'
-        else
-          word[0] = word[0].upcase
-        end
-      end
-    @title = line.join(' ')
+  def title=(name)
+    exceptions = ["the", "a", "an", "and", "in", "of"]
+    name[0] = name[0].upcase
+    name = name.split.each do |word|
+      word[0] = word[0].upcase unless exceptions.include?(word)
+    end
+    @title = name.join(" ")
   end
 end
