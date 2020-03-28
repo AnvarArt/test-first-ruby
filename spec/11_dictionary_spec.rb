@@ -6,6 +6,7 @@
 # * regular expressions
 
 require '11_dictionary'
+require 'pry'
 
 describe Dictionary do
   before do
@@ -34,7 +35,7 @@ describe Dictionary do
 
   it "doesn't cheat when checking whether a given keyword exists" do
     expect(@d.include?("fish")).to be_falsey # if the method is empty, this test passes with nil returned
-    @d.add("fish")
+    @d.add("fish") # entries => {"fish" => nil}
     expect(@d.include?("fish")).to be_truthy # confirms that it actually checks
     expect(@d.include?("bird")).to be_falsey # confirms not always returning true after add
   end
@@ -59,13 +60,6 @@ describe Dictionary do
     expect(@d.find("fish")).to eq({"fish" => "aquatic animal"})
   end
 
-  it "finds multiple matches from a prefix and returns the entire entry (keyword + definition)" do
-    @d.add("fish" => "aquatic animal")
-    @d.add("fiend" => "wicked person")
-    @d.add("great" => "remarkable")
-    expect(@d.find("fi")).to eq({"fish" => "aquatic animal", "fiend" => "wicked person"})
-  end
-
   it "lists keywords alphabetically" do
     @d.add("zebra" => "African land animal with stripes")
     @d.add("fish" => "aquatic animal")
@@ -73,10 +67,10 @@ describe Dictionary do
     expect(@d.keywords).to eq(%w(apple fish zebra))
   end
 
-  it "can produce printable output like so: [keyword] 'definition'" do
-    @d.add("zebra" => "African land animal with stripes")
+  it "finds multiple matches from a prefix and returns the entire entry (keyword + definition)" do
     @d.add("fish" => "aquatic animal")
-    @d.add("apple" => "fruit")
-    expect(@d.printable).to eq(%Q{[apple] "fruit"\n[fish] "aquatic animal"\n[zebra] "African land animal with stripes"})
+    @d.add("fiend" => "wicked person")
+    @d.add("great" => "remarkable")
+    expect(@d.find("fi")).to eq({"fish" => "aquatic animal", "fiend" => "wicked person"})
   end
 end
