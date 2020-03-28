@@ -25,7 +25,6 @@ attr_accessor :entries
 
   def find(opt3)
     final = {}
-
 		@entries.each do |key, value|
 			if key =~ /^#{opt3}/
 				final[key] = value
@@ -34,5 +33,4 @@ attr_accessor :entries
 
 		final
   end
-
 end
