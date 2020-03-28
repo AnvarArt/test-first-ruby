@@ -30,7 +30,7 @@ attr_accessor :entries
 			if key =~ /^#{opt3}/
 				final[key] = value
 			end
-		end
+	  end
 
 		final
   end
