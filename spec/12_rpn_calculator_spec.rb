@@ -41,7 +41,7 @@
 # See
 # * <http://en.wikipedia.org/wiki/Reverse_Polish_notation>
 # * <http://www.calculator.org/rpn.aspx>
-
+require 'pry'
 require "12_rpn_calculator"
 
 describe RPNCalculator do
@@ -101,6 +101,7 @@ describe RPNCalculator do
     calculator.push(2)
     calculator.plus
     calculator.push(3)
+    # binding.pry
     calculator.times
     expect(calculator.value).to eq((1+2)*3)
 
