@@ -21,12 +21,13 @@
 #
 # The number 4 is of class `FixNum` and it has methods on it.  Your
 # challenge is to add an `in_words` method to `FixNum`.
-
+require "pry"
 require "15_in_words"
 
 describe Fixnum do
   it "reads 0 to 9" do
     expect(0.in_words).to eq("zero")
+    # binding.pry
     expect(1.in_words).to eq("one")
     expect(2.in_words).to eq("two")
     expect(3.in_words).to eq("three")
