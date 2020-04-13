@@ -101,7 +101,6 @@ describe RPNCalculator do
     calculator.push(2)
     calculator.plus
     calculator.push(3)
-    # binding.pry
     calculator.times
     expect(calculator.value).to eq((1+2)*3)
 
